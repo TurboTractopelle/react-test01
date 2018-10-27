@@ -3,10 +3,18 @@
   text-align: center;
 }
 
+body {
+  background: red;
+}
+
 .active {
   font-weight: bold;
 }
 
 nav {
   background: #333;
+}
+
+section {
+  border: solid 1px #ccc;
 }

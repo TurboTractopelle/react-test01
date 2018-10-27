@@ -11,7 +11,7 @@ const store = [
   },
   {
     id: 3,
-    name: "Pierre",
+    name: "Poum",
     cat: "sector2"
   }
 ];
