@@ -29,7 +29,13 @@ class App extends Component {
     }, {});
   };
 
-  //state = this.initStore(store);
+  handleEditById = (id, value) => {
+    this.setState(prevState => {
+      let perso = (prevState.store[id].name = value);
+      return { ...prevState, perso };
+    });
+  };
+
   state = { store: store };
   render() {
     const { store } = this.state.store;
@@ -55,7 +61,13 @@ class App extends Component {
           />
           <Route
             path="/id/:id"
-            render={props => <UserById content={this.state} {...props} />}
+            render={props => (
+              <UserById
+                content={this.state}
+                {...props}
+                handleEditById={this.handleEditById}
+              />
+            )}
           />
         </Switch>
       </div>
