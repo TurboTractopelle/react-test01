@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import User from "./User";
 
 const Section = ({ sectionContent }) => {
-  console.log(sectionContent);
   return (
     <article>
       {sectionContent.map(item => (

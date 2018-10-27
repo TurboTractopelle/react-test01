@@ -1,10 +1,25 @@
 import React from "react";
 import Section from "./Section";
 
-const Test = () => <p>Test</p>;
+const Sections = ({ contenu }) => {
+  const initStore = store => {
+    return store.reduce((acc, item) => {
+      let cat = item.cat;
+      item.section = acc[cat]
+        ? (acc[cat] = [...acc[cat], item])
+        : (acc[cat] = [item]);
+      acc.sections
+        ? acc.sections.find(item => item === cat)
+          ? null
+          : (acc.sections = [...acc.sections, cat])
+        : (acc.sections = [cat]);
+      return acc;
+    }, {});
+  };
 
-const Sections = ({ sectionList, contenu }) => {
-  console.log(sectionList);
+  const tri = initStore(contenu);
+  const sectionList = tri.sections;
+
   return (
     <div>
       {sectionList ? (
@@ -12,7 +27,7 @@ const Sections = ({ sectionList, contenu }) => {
           {sectionList.map((item, i) => (
             <section key={i}>
               <h2>{item}</h2>
-              <Section sectionContent={contenu[item]} />
+              <Section sectionContent={tri[item]} />
             </section>
           ))}
         </div>

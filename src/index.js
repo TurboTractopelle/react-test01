@@ -22,11 +22,10 @@ class App extends Component {
     }, {});
   };
 
-  state = this.initStore(store);
+  //state = this.initStore(store);
+  state = { store: store };
 
   render() {
-    console.log(this.state);
-    const { sections } = this.state;
     return (
       <div>
         <nav>
@@ -40,9 +39,7 @@ class App extends Component {
           <Route
             exact
             path="/sections"
-            render={() => (
-              <Sections sectionList={sections} contenu={this.state} />
-            )}
+            render={() => <Sections contenu={this.state.store} />}
           />
           <Route exact path="/id" component={Id} />
         </Switch>
