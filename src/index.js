@@ -41,7 +41,11 @@ class App extends Component {
             path="/sections"
             render={() => <Sections contenu={this.state.store} />}
           />
-          <Route exact path="/id" component={Id} />
+          <Route
+            exact
+            path="/id"
+            render={() => <Id contenu={this.state.store} />}
+          />
         </Switch>
       </div>
     );
