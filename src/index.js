@@ -4,7 +4,14 @@ import store from "./Store";
 import Home from "./components/Home";
 import Sections from "./components/Sections";
 import Id from "./components/Id";
+import UserById from "./components/UserById";
+
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
+const UserId = ({ match }) => {
+  console.log(match.params.id);
+  return <UserById id={match.params.id} />;
+};
 
 class App extends Component {
   initStore = store => {
@@ -24,14 +31,14 @@ class App extends Component {
 
   //state = this.initStore(store);
   state = { store: store };
-
   render() {
+    const { store } = this.state.store;
     return (
       <div>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/sections">Sections</Link>
-          <Link to="/id">User by id</Link>
+          <Link to="/ids">Users by id</Link>
         </nav>
 
         <Switch>
@@ -43,8 +50,12 @@ class App extends Component {
           />
           <Route
             exact
-            path="/id"
+            path="/ids"
             render={() => <Id contenu={this.state.store} />}
+          />
+          <Route
+            path="/id/:id"
+            render={props => <UserById content={this.state} {...props} />}
           />
         </Switch>
       </div>
