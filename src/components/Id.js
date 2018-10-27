@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import User from "./User";
 
 const Id = ({ contenu }) => {
-  console.log(contenu);
   return (
     <section>
       {contenu.map((item, i) => (
