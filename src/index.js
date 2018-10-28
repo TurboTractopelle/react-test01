@@ -19,6 +19,7 @@ class App extends Component {
   state = { store: store };
 
   render() {
+    console.log(this.state.store);
     return (
       <div>
         <nav>

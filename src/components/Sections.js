@@ -5,9 +5,7 @@ const Sections = ({ contenu }) => {
   const initStore = contenu => {
     return contenu.reduce((acc, item) => {
       let cat = item.cat;
-      item.section = acc[cat]
-        ? (acc[cat] = [...acc[cat], item])
-        : (acc[cat] = [item]);
+      acc[cat] ? (acc[cat] = [...acc[cat], item]) : (acc[cat] = [item]);
       acc.sections
         ? acc.sections.find(item => item === cat)
           ? null
@@ -17,8 +15,10 @@ const Sections = ({ contenu }) => {
     }, {});
   };
 
+  //const tri = initStore(contenu);
   const tri = initStore(contenu);
   const sectionList = tri.sections;
+  console.log(tri);
 
   return (
     <div>
