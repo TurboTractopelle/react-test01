@@ -23,6 +23,16 @@ const store = [
     id: 4,
     name: "Rick",
     cat: "sector1"
+  },
+  {
+    id: 5,
+    name: "Pam",
+    cat: "sector2"
+  },
+  {
+    id: 6,
+    name: "Pim",
+    cat: "sector2"
   }
 ];
 

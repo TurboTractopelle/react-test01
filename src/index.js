@@ -19,13 +19,12 @@ class App extends Component {
   state = { store: store };
 
   render() {
-    console.log(this.state.store);
     return (
       <div>
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/sections">Sections</Link>
           <Link to="/ids">Users by id</Link>
+          <Link to="/sections">Users by sector</Link>
         </nav>
 
         <Switch>

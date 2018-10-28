@@ -4,9 +4,17 @@ import User from "./User";
 const Id = ({ contenu }) => {
   return (
     <section>
-      {contenu.map((item, i) => (
-        <User name={item.name} id={item.id} key={item.id} />
-      ))}
+      {contenu.map((item, i) => {
+        console.log(item.cat);
+        return (
+          <User
+            name={item.name}
+            id={item.id}
+            section={item.cat}
+            key={item.id}
+          />
+        );
+      })}
     </section>
   );
 };

@@ -8,13 +8,14 @@ const UserById = ({ match, content, handleEditById }) => {
   };
 
   return (
-    <div>
+    <section>
+      <p>Edit the profile</p>
       <input
         type="text"
         value={content.store[id].name}
         onChange={e => handleEdit(e, id)}
       />
-    </div>
+    </section>
   );
 };
 

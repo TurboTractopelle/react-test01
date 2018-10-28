@@ -13,8 +13,16 @@
 	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 <link rel="stylesheet" href="../src/styles.css">
 <style type="text/css">
+body{font-family:sans-serif}
+nav{background:#333; padding:1rem}
+nav a{color:#fff; display:inline-block; padding:1rem; text-decoration:none}
+nav a.active{color:red}
 section{border:solid 1px #ccc; padding:1rem}
-article{border:solid 1px red}
+article{border:solid 1px #eee; padding:0.5rem 1rem; display:flex}
+article a{display:inline-block; padding:0 0.5rem; background:#a20015; color:#fff; display:inline-block; border-radius:5px; margin-right:0.5rem; text-decoration:none}
+article a:hover{background:red}
+article span:first-child{flex:1}
+article .section{color:#444; display:inline-block; margin-left:3rem}
 </style>
 
 

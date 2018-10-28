@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-const User = ({ id, name }) => {
+const User = ({ id, name, section = false }) => {
   let url = "/id/" + id;
   return (
     <article>
-      <b>
+      <span>
         <Link to={url}>{id}</Link>
-      </b>{" "}
-      - {name}
+        {name}
+      </span>{" "}
+      {section && <span className="section">{section}</span>}
     </article>
   );
 };
