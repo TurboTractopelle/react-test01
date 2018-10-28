@@ -8,27 +8,7 @@ import UserById from "./components/UserById";
 
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-const UserId = ({ match }) => {
-  console.log(match.params.id);
-  return <UserById id={match.params.id} />;
-};
-
 class App extends Component {
-  initStore = store => {
-    return store.reduce((acc, item) => {
-      let cat = item.cat;
-      item.section = acc[cat]
-        ? (acc[cat] = [...acc[cat], item])
-        : (acc[cat] = [item]);
-      acc.sections
-        ? acc.sections.find(item => item === cat)
-          ? null
-          : (acc.sections = [...acc.sections, cat])
-        : (acc.sections = [cat]);
-      return acc;
-    }, {});
-  };
-
   handleEditById = (id, value) => {
     this.setState(prevState => {
       let perso = (prevState.store[id].name = value);
@@ -37,8 +17,8 @@ class App extends Component {
   };
 
   state = { store: store };
+
   render() {
-    const { store } = this.state.store;
     return (
       <div>
         <nav>

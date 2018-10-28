@@ -2,8 +2,8 @@ import React from "react";
 import Section from "./Section";
 
 const Sections = ({ contenu }) => {
-  const initStore = store => {
-    return store.reduce((acc, item) => {
+  const initStore = contenu => {
+    return contenu.reduce((acc, item) => {
       let cat = item.cat;
       item.section = acc[cat]
         ? (acc[cat] = [...acc[cat], item])
